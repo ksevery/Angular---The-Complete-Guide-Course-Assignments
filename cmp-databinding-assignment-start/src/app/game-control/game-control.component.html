@@ -1,0 +1,3 @@
+<button (click)="onGameClick()" class="btn"[ngClass]="{'btn-danger': gameStarted, 'btn-success': !gameStarted}">
+    {{ gameButtonText }}
+</button>
