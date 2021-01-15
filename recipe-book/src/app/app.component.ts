@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Pages } from './helpers/navEnum';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipe-book';
+  currentPage: Pages = Pages.RecipeBook;
+  pages = Pages;
+
+  onHeaderLinkClicked(newPage: Pages) {
+    this.currentPage = newPage;
+  }
 }

@@ -1,9 +1,10 @@
-<app-header></app-header>
+<app-header (headerLinkClicked)="onHeaderLinkClicked($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipe-book-list></app-recipe-book-list>
-      <app-shopping-list></app-shopping-list>
+      <app-recipe-book-list *ngIf="currentPage === pages.RecipeBook"></app-recipe-book-list>
+      <app-shopping-list *ngIf="currentPage === pages.ShoppingList">
+      </app-shopping-list>
     </div>
   </div>
 </div>
