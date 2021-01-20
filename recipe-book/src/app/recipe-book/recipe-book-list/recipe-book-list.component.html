@@ -8,12 +8,14 @@
     <hr />
     <div class="row">
       <div class="col-xs-12">
-        <app-recipe-book-item *ngFor="let recipe of recipes" [recipe]="recipe" (recipeClicked)="onRecipeClicked($event)"></app-recipe-book-item>
+        <app-recipe-book-item *ngFor="let recipe of recipes"
+                              [recipe]="recipe"></app-recipe-book-item>
       </div>
     </div>
   </div>
   <div class="col-md-7">
-    <app-recipe-book-detail *ngIf="currentRecipe; else infoText" [recipe]="currentRecipe">
+    <app-recipe-book-detail *ngIf="currentRecipe; else infoText"
+                            [recipe]="currentRecipe">
     </app-recipe-book-detail>
     <ng-template #infoText>
       <p>No recipe selected. Please select a recipe to view its details.</p>

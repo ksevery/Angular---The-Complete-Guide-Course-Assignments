@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Recipe } from '../recipe-model';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-book-list',
@@ -9,20 +10,16 @@ import { Recipe } from '../recipe-model';
 })
 export class RecipeBookListComponent implements OnInit {
 
-  recipes: Recipe[] = [
-    new Recipe('A Test Recipe', 'This is simply a test', 'https://tse3.mm.bing.net/th?id=OIP.bi91Vk9aEGwKHbqsgiUrsQHaFj&pid=Api'),
-    new Recipe("Here's another one!", 'More testing, yay!', 'https://tse3.mm.bing.net/th?id=OIP.bi91Vk9aEGwKHbqsgiUrsQHaFj&pid=Api')
-  ];
+  recipes: Recipe[];
 
   currentRecipe: Recipe;
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
+    this.recipes = this.recipeService.getRecipes();
+    this.recipeService.recipeSelected.subscribe(recipe => {
+      this.currentRecipe = recipe;
+    });
   }
-
-  onRecipeClicked(recipe: Recipe) {
-    this.currentRecipe = recipe;
-  }
-
 }
