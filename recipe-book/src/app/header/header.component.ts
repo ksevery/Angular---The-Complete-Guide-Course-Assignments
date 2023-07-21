@@ -7,18 +7,10 @@ import { Pages } from '../helpers/navEnum';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() headerLinkClicked = new EventEmitter<Pages>();
-  pages = Pages;
-
   collapsed = true;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  onNavClicked(newPage) {
-    this.headerLinkClicked?.emit(newPage);
-  }
-
 }

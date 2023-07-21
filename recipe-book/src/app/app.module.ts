@@ -9,6 +9,9 @@ import { HeaderComponent } from './header/header.component';
 import { RecipeBookListComponent } from './recipe-book/recipe-book-list/recipe-book-list.component';
 import { RecipeBookItemComponent } from './recipe-book/recipe-book-item/recipe-book-item.component';
 import { RecipeBookDetailComponent } from './recipe-book/recipe-book-detail/recipe-book-detail.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +22,13 @@ import { RecipeBookDetailComponent } from './recipe-book/recipe-book-detail/reci
     RecipeBookListComponent,
     RecipeBookItemComponent,
     RecipeBookDetailComponent,
-    DropdownDirective
+    DropdownDirective,
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

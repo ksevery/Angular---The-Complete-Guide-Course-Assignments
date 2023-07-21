@@ -8,13 +8,7 @@ import { Pages } from './helpers/navEnum';
 })
 export class AppComponent implements OnInit {
   title = 'recipe-book';
-  currentPage: Pages = Pages.RecipeBook;
-  pages = Pages;
 
   ngOnInit(): void {
-  }
-
-  onHeaderLinkClicked(newPage: Pages) {
-    this.currentPage = newPage;
   }
 }
