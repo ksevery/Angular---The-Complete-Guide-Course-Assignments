@@ -6,20 +6,14 @@ import { RecipeService } from '../recipe.service';
 @Component({
   selector: 'app-recipe-book-list',
   templateUrl: './recipe-book-list.component.html',
-  styleUrls: ['./recipe-book-list.component.css']
+  styleUrls: ['./recipe-book-list.component.css'],
 })
 export class RecipeBookListComponent implements OnInit {
-
   recipes: Recipe[];
 
-  currentRecipe: Recipe;
-
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService) {}
 
   ngOnInit(): void {
     this.recipes = this.recipeService.getRecipes();
-    this.recipeService.recipeSelected.subscribe(recipe => {
-      this.currentRecipe = recipe;
-    });
   }
 }
